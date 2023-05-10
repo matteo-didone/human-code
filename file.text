@@ -1,0 +1,192 @@
+Aprire un pacchetto di figurine
+
+Pacchetto di figurine
+
+1) Aprire il paccheto nuovo appena comprato 
+2) Aprire l'album per prepararmi ad inserire le figurine nuove 
+3) Apro il pacchetto 
+4) Capisco quante carte ci sono per un nuovo pacchetto
+
+FIN TANTO CHE NON FINISCO LE CARTE PRESENTI ALL'INTERNO DEL NUOVO PACCHETTO 
+{
+        Prendiamo in considerazione il pacchetto 
+        {
+            SE carta ce l'abbiamo 
+            {
+                carta = 1
+                carta aggiunta al mazzo di carte di scambio
+                mettere il mazzo di scambio da parte per darlo agli amici Sabato
+            }
+
+            SE carta non ce l'abbiamo 
+            {
+                carta = 0
+                carta incollata sull'album
+
+                SE la carta che non avevamo basta a completare l'album 
+                {
+                    Album Completato 
+                    Non vado Sabato a scambiare le carte con gli amici   
+                }
+            }
+        }
+}
+
+SE le carte che non avevamo bastano a completare l'album 
+{
+    Album Completato 
+    Non vado Sabato a scambiare le carte con gli amici   
+}
+
+5) Mettiamo via l'album 
+
+SE LE CARTE DEL NUOVO PACCHETTO NON BASTANO A COMPLETARE L'ALBUM 
+{
+    Creiamo un mazzo di carte alternativo da scambiare Sabato 
+}
+
+SE 
+(
+    CARTE DEL NUOVO PACCHETO NON BASTANO A COMPLETARE L'ALBUM 
+
+    AND (&&)
+
+        HO AMICI CON CUI SCAMBIARLE 
+
+    AND (&&)
+        OGGI == SABATO
+) 
+{
+    6) Sabato vado a scambiare le carte, portando l'album e il mazzo di carte di scambio 
+    
+    FIN TANTO CHE HO AMICI CON CUI SCAMBIARE LE CARTE
+    {
+        SE IL NOSTRO AMICO HA CARTE DI SCAMBIO 
+        {
+            Prendiamo in considerazione il suo mazzo 
+            {
+                SE la sua carta = 1
+                {
+                    Ce l'abbiamo 
+                    Non scambiamo 
+                }
+
+                Se la sua carta = 0 
+                {
+                    Non ce l'abbiamo 
+                    Proviamo a scambiare
+
+                    SE AMICO == ANTIPATICO 
+                    {
+                        Non me la scambia 
+                        Passo al prossimo amico 
+                    }
+
+                    SE AMICO == SIMPATICO
+                    {
+                        Me la scambia 
+                        
+                        SE ho completato l'album grazie allo scambio 
+                        {
+                            Album completato 
+                            Torno a casa
+                        }
+                    }
+                }
+            }
+
+            FIN TANTO CHE I NOSTRI AMICI HANNO CARTE DI SCAMBIO AND (&&) VOGLIONO CONTINUARE A SCAMBIARLE 
+            {
+                SE amico ha le carte 0
+                {
+                    Gliela scambiamo per una carta 1
+                }
+
+                SE amico ha la carta 1
+                {
+                    Mi tengo la carta
+                    La scambio la prossima volta
+                }
+
+            } 
+
+            FIN TANTO CHE I NOSTRI AMICI HANNO CARTE DI SCAMBIO AND (&&) NON !(VOGLIONO) CONTINUARE A SCAMBIARLE 
+            {
+                Vado a casa 
+                Trovo dei nuovi amici 
+            }
+
+            FIN TANTO CHE I NOSTRI AMICI NON !HANNO CARTE DI SCAMBIO AND (&&) VOGLIONO CONTINUARE A SCAMBIARLE 
+            {
+                Si va a casa lo stesso a cercare nuovi amici 
+            } 
+
+        }
+    }
+}
+
+SE 
+(
+    CARTE DEL NUOVO PACCHETO NON BASTANO A COMPLETARE L'ALBUM 
+
+    AND (&&)
+
+        HO AMICI CON CUI SCAMBIARLE 
+
+    AND (&&)
+        OGGI NON (!=) SABATO
+) 
+{
+    Sto a casa 
+
+    Chiamo la casa editrice per farmi dare le figurine che mi mancano
+    {
+        Album Completato 
+        Non vado Sabato a scambiare le carte con gli amici         
+    }
+}
+
+SE 
+(
+    CARTE DEL NUOVO PACCHETO NON BASTANO A COMPLETARE L'ALBUM 
+
+    AND (&&)
+
+        NON !(HO AMICI CON CUI SCAMBIARLE)
+
+    AND (&&)
+        OGGI NON (!=) SABATO
+) 
+{
+    Devo farmi degli amici 
+    Sto a casa
+
+    Chiamo la casa editrice per farmi dare le figurine che mi mancano
+    {
+        Album Completato 
+        Non vado Sabato a scambiare le carte con gli amici         
+    }
+}
+
+
+
+SE IL NOSTRO AMICO NON HA CARTE DI SCAMBIO 
+{
+    Torniamo a casa
+}
+
+
+
+
+
+
+Incollo le figurine scambiate con l'amico
+
+/* FIN TANTO CHE HO FIGURINE 0 
+* {
+*    Le incollo nell'album     
+* }
+*/
+
+
+
