@@ -155,6 +155,7 @@ SE
         NON !(HO AMICI CON CUI SCAMBIARLE)
 
     AND (&&)
+    
         OGGI NON (!=) SABATO
 ) 
 {
